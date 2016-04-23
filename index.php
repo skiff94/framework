@@ -6,4 +6,11 @@
  * Time: 10:08 AM
  */
 
-echo 'Hello, World';
+function _autoload($className)
+{
+    require_once $className . '.class.php';
+}
+
+spl_autoload_register('autoload');
+
+$user = new User();
